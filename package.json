@@ -1,0 +1,28 @@
+{
+  "name": "eth-username",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc && copyfiles ./src/**/*.json dist/",
+    "test": "mocha --timeout 10000 -r  ts-node/register ./src/test/index.ts"
+  },
+  "author": "“Noah <“noah.bouma@gmail.com”>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^11.13.0",
+    "copyfiles": "^2.1.0",
+    "ethers": "^4.0.27",
+    "ipfs-http-client": "^30.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "ganache-cli": "^6.4.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1",
+    "web3": "^1.0.0-beta.37"
+  }
+}
