@@ -43,7 +43,7 @@ var chai_1 = require("chai");
 var providers_1 = require("ethers/providers");
 var ethers_1 = require("ethers");
 var ganache_cli_1 = __importDefault(require("ganache-cli"));
-var eth_username_1 = __importDefault(require("../eth-username"));
+var eth_username_1 = require("../eth-username");
 var username_registry_contract_1 = __importDefault(require("../contract/username-registry-contract"));
 var web3_1 = __importDefault(require("web3"));
 describe("Testing eth-username", function () { return __awaiter(_this, void 0, void 0, function () {
@@ -63,7 +63,7 @@ describe("Testing eth-username", function () { return __awaiter(_this, void 0, v
                 switch (_a.label) {
                     case 0:
                         console.log("Connecting to ipfs...");
-                        eth_username_1.default.connectToIpfs(IPFS_HOST);
+                        eth_username_1.EthUsername.connectToIpfs(IPFS_HOST);
                         console.log("Creating test chain...");
                         // Create the test ethereum network
                         ethServer = ganache_cli_1.default.server();
@@ -115,10 +115,10 @@ describe("Testing eth-username", function () { return __awaiter(_this, void 0, v
             before(function () { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0: return [4 /*yield*/, eth_username_1.default.load(user1Wallet, eth_username_1.default.LOCAL_TESTNET, { contractAddress: usernameRegistryAddress })];
+                        case 0: return [4 /*yield*/, eth_username_1.EthUsername.load(user1Wallet, eth_username_1.EthUsername.LOCAL_TESTNET, { contractAddress: usernameRegistryAddress })];
                         case 1:
                             ethUsername1 = _a.sent();
-                            return [4 /*yield*/, eth_username_1.default.load(user2Wallet, eth_username_1.default.LOCAL_TESTNET, { contractAddress: usernameRegistryAddress })];
+                            return [4 /*yield*/, eth_username_1.EthUsername.load(user2Wallet, eth_username_1.EthUsername.LOCAL_TESTNET, { contractAddress: usernameRegistryAddress })];
                         case 2:
                             ethUsername2 = _a.sent();
                             return [2 /*return*/];

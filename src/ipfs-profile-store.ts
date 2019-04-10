@@ -1,6 +1,6 @@
-import EthUsername from "./eth-username";
+import { EthUsername } from "./eth-username";
 
-export default class IpfsProfileStore {
+export class IpfsProfileStore {
 
   /*
   * Store a profile object on ipfs

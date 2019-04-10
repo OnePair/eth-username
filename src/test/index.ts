@@ -3,7 +3,7 @@ import { JsonRpcProvider, Provider } from "ethers/providers";
 import { Wallet } from "ethers";
 
 import ganache from "ganache-cli";
-import EthUsername from "../eth-username";
+import { EthUsername } from "../eth-username";
 import UsernameRegistryContract from "../contract/username-registry-contract";
 import Web3 from "web3";
 

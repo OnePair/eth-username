@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a;
 var username_registry_1 = __importDefault(require("./username-registry"));
-var ipfs_profile_store_1 = __importDefault(require("./ipfs-profile-store"));
+var ipfs_profile_store_1 = require("./ipfs-profile-store");
 var ipfs_http_client_1 = __importDefault(require("ipfs-http-client"));
 var EthUsername = /** @class */ (function () {
     function EthUsername(usernameRegistry, wallet) {
@@ -58,7 +58,7 @@ var EthUsername = /** @class */ (function () {
                         return [4 /*yield*/, this.wallet.getAddress()];
                     case 1:
                         userAddress = _a.sent();
-                        return [4 /*yield*/, ipfs_profile_store_1.default.storeProfile(profile)];
+                        return [4 /*yield*/, ipfs_profile_store_1.IpfsProfileStore.storeProfile(profile)];
                     case 2:
                         profileAddress = _a.sent();
                         return [4 /*yield*/, this.usernameRegistry.registerUsername(username, userAddress, profileAddress)];
@@ -86,7 +86,7 @@ var EthUsername = /** @class */ (function () {
                         return [4 /*yield*/, this.usernameRegistry.getProfileAddress(username)];
                     case 1:
                         profileAddress = _a.sent();
-                        profile = ipfs_profile_store_1.default.getProfile(profileAddress);
+                        profile = ipfs_profile_store_1.IpfsProfileStore.getProfile(profileAddress);
                         onSuccess(profile);
                         return [3 /*break*/, 3];
                     case 2:
@@ -129,7 +129,7 @@ var EthUsername = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, ipfs_profile_store_1.default.storeProfile(profile)];
+                        return [4 /*yield*/, ipfs_profile_store_1.IpfsProfileStore.storeProfile(profile)];
                     case 1:
                         profileAddress = _a.sent();
                         return [4 /*yield*/, this.usernameRegistry.setProfileAddress(username, profileAddress)];
@@ -191,4 +191,4 @@ var EthUsername = /** @class */ (function () {
         _a);
     return EthUsername;
 }());
-exports.default = EthUsername;
+exports.EthUsername = EthUsername;

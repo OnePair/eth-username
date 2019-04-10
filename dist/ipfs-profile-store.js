@@ -1,9 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var eth_username_1 = __importDefault(require("./eth-username"));
+var eth_username_1 = require("./eth-username");
 var IpfsProfileStore = /** @class */ (function () {
     function IpfsProfileStore() {
     }
@@ -14,14 +11,14 @@ var IpfsProfileStore = /** @class */ (function () {
         return new Promise(function (onSuccess, onError) {
             try {
                 var buffer = Buffer.from(JSON.stringify(profile));
-                eth_username_1.default.ipfsApi.add(buffer, function (err, fileInfo) {
+                eth_username_1.EthUsername.ipfsApi.add(buffer, function (err, fileInfo) {
                     if (err) {
                         onError(err);
                     }
                     else {
                         var address_1 = fileInfo[0]["hash"];
                         // Pin to the node
-                        eth_username_1.default.ipfsApi.pin.add(address_1, function () {
+                        eth_username_1.EthUsername.ipfsApi.pin.add(address_1, function () {
                             onSuccess(address_1);
                         });
                     }
@@ -35,7 +32,7 @@ var IpfsProfileStore = /** @class */ (function () {
     IpfsProfileStore.getProfile = function (address) {
         return new Promise(function (onSuccess, onError) {
             try {
-                eth_username_1.default.ipfsApi.cat(address, function (err, file) {
+                eth_username_1.EthUsername.ipfsApi.cat(address, function (err, file) {
                     if (err) {
                         onError(err);
                     }
@@ -52,4 +49,4 @@ var IpfsProfileStore = /** @class */ (function () {
     };
     return IpfsProfileStore;
 }());
-exports.default = IpfsProfileStore;
+exports.IpfsProfileStore = IpfsProfileStore;
