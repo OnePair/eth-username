@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc && copyfiles ./src/**/*.json dist/",
+    "build": "tsc && copyfiles ./src/**/*.json dist/ && tsc --declaration",
     "test": "mocha --timeout 10000 -r  ts-node/register ./src/test/index.ts"
   },
   "author": "“Noah <“noah.bouma@gmail.com”>",

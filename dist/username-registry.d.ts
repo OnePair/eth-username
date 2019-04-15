@@ -1,5 +1,5 @@
 import { Wallet, Contract } from "ethers";
-export default class UsernameRegistry {
+export declare class UsernameRegistry {
     private contract;
     constructor(contract: Contract);
     registerUsername(username: string, userAddress: string, profileAddress: string): Promise<object>;

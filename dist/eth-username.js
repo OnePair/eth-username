@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a;
-var username_registry_1 = __importDefault(require("./username-registry"));
+var username_registry_1 = require("./username-registry");
 var ipfs_profile_store_1 = require("./ipfs-profile-store");
 var ipfs_http_client_1 = __importDefault(require("ipfs-http-client"));
 var EthUsername = /** @class */ (function () {
@@ -160,7 +160,7 @@ var EthUsername = /** @class */ (function () {
                             contractAddress = options["contractAddress"];
                         else
                             contractAddress = EthUsername.NETWOR_ADDRESS_MAP[network];
-                        return [4 /*yield*/, username_registry_1.default.load(contractAddress, wallet)];
+                        return [4 /*yield*/, username_registry_1.UsernameRegistry.load(contractAddress, wallet)];
                     case 1:
                         usernameRegistry = _a.sent();
                         onSuccess(new EthUsername(usernameRegistry, wallet));

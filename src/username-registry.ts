@@ -6,7 +6,7 @@ import * as path from "path";
 /*
 * This is the smart contract client
 */
-export default class UsernameRegistry {
+export class UsernameRegistry {
   private contract: Contract;
 
   constructor(contract: Contract) {

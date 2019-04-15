@@ -232,4 +232,4 @@ var UsernameRegistry = /** @class */ (function () {
     };
     return UsernameRegistry;
 }());
-exports.default = UsernameRegistry;
+exports.UsernameRegistry = UsernameRegistry;

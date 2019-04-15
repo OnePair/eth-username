@@ -1,6 +1,6 @@
 import { Wallet } from "ethers";
 
-import UsernameRegistry from "./username-registry";
+import { UsernameRegistry } from "./username-registry";
 import { IpfsProfileStore } from "./ipfs-profile-store";
 import IPFSApi from "ipfs-http-client";
 

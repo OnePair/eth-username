@@ -1,5 +1,5 @@
 import { Wallet } from "ethers";
-import UsernameRegistry from "./username-registry";
+import { UsernameRegistry } from "./username-registry";
 import IPFSApi from "ipfs-http-client";
 export declare class EthUsername {
     static ROPSTEN_TESTNET: string;
