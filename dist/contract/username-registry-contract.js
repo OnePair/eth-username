@@ -81,4 +81,4 @@ var UsernameRegistryContract = /** @class */ (function () {
     };
     return UsernameRegistryContract;
 }());
-exports.default = UsernameRegistryContract;
+exports.UsernameRegistryContract = UsernameRegistryContract;

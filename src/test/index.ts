@@ -4,7 +4,7 @@ import { Wallet } from "ethers";
 
 import ganache from "ganache-cli";
 import { EthUsername } from "../eth-username";
-import UsernameRegistryContract from "../contract/username-registry-contract";
+import { UsernameRegistryContract } from "../contract/username-registry-contract";
 import Web3 from "web3";
 
 describe("Testing eth-username", async () => {

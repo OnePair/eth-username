@@ -3,7 +3,7 @@ import { Wallet, ContractFactory } from "ethers";
 import * as path from "path";
 import * as fs from "fs";
 
-export default class UsernameRegistryContract {
+export class UsernameRegistryContract {
 
   public static deploy(wallet: Wallet): Promise<string> {
     return new Promise<string>(async (onSuccess: Function, onError: Function) => {

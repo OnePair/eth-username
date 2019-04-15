@@ -44,7 +44,7 @@ var providers_1 = require("ethers/providers");
 var ethers_1 = require("ethers");
 var ganache_cli_1 = __importDefault(require("ganache-cli"));
 var eth_username_1 = require("../eth-username");
-var username_registry_contract_1 = __importDefault(require("../contract/username-registry-contract"));
+var username_registry_contract_1 = require("../contract/username-registry-contract");
 var web3_1 = __importDefault(require("web3"));
 describe("Testing eth-username", function () { return __awaiter(_this, void 0, void 0, function () {
     var IPFS_HOST, RPC_HOST, USER1, USER2, USER1_PROFILE, USER1_PROFILE2, USER2_PROFILE, ethServer, rpcProvider, web3, user1Wallet, user2Wallet, usernameRegistryAddress, ethUsername1, ethUsername2;
@@ -101,7 +101,7 @@ describe("Testing eth-username", function () { return __awaiter(_this, void 0, v
         describe("Deployment", function () {
             it("Should successfully deploy the username-registry contract", function (done) {
                 chai_1.assert.doesNotThrow(function () {
-                    username_registry_contract_1.default.deploy(user1Wallet).then(function (address) {
+                    username_registry_contract_1.UsernameRegistryContract.deploy(user1Wallet).then(function (address) {
                         usernameRegistryAddress = address;
                         console.log("Contract address:", usernameRegistryAddress);
                         done();
